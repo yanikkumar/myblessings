@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday! YourGreatSite</title>
+    <title>Happy Birthday! GreatSite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <style>
@@ -45,6 +45,12 @@
 
 <body class="bg-gradient-to-r from-purple-400 to-pink-500 min-h-screen flex items-center justify-center">
 
+    <div class="absolute top-4 right-4 z-20">
+        <a href="https://github.com/yanikkumar/yourbirthday" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.shields.io/github/stars/yanikkumar/yourbirthday?style=social" alt="Star on GitHub">
+        </a>
+    </div>
+
     <div class="bg-white p-8 rounded-lg shadow-2xl text-center max-w-md w-full fade-in">
         <?php
         // https://yourbirthday.great-site.net/?name=Yanik&sender=Believe+Master&dob=1998-03-21
@@ -64,7 +70,7 @@
             }
             echo "<p class='text-md mt-4'>With 🥰 From " . htmlspecialchars($sendersName) . "</p><hr class='my-4'/>"; // added the dynamic line
         
-            echo "<p class='text-xs font-light'>Created By Believe Master - Create, Innovate, Inspire & Serve</p>";
+            echo "<p class='text-xs font-light'>Created By <a href='https://youtube.com/yanikkumarvlogs?sub_confirmation=1' class='text-red-400 font-semibold'>Yanik Kumar</a></p>";
         }
 
         $name = isset($_GET['name']) ? $_GET['name'] : 'Guest';
@@ -72,11 +78,14 @@
         $dob = isset($_GET['dob']) ? $_GET['dob'] : null;
         birthday_celebration($name, $sendersName, $dob);
         ?>
+
         <footer class="text-center p-4 text-sky-600">
-            &copy; <?php echo date("Y"); ?> <a href="https://feedinweb.com" class="font-light text-xs">FeedinWeb</a>
+            &copy; <?php echo date("Y"); ?> <a href="https://yourbirthday.great-site.net"
+                class="font-light text-xs">YourBirthday.GreatSite</a></br>
+            <a href="https://github.com/yanikkumar" class="font-light text-xs">Believe Master - Create Innovate Inspire
+                & Serve</a>
         </footer>
     </div>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
