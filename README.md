@@ -32,5 +32,9 @@ or you can directly replace the parameters on in the direct link as follows:
 [https://yourbirthday.great-site.net/?name=Yanik&sender=BelieveMaster&dob=1998-03-21](https://yourbirthday.great-site.net/?name=name=Yanik&sender=BelieveMaster&dob=1998-03-21)
 
 name={BIRTHDAY_PERSON_NAME}
+
 sender={NAME_OF_THE_PERSON_SENDING_WISHES}
-(optional)dob={DOB_OF_BIRTHDAYPERSON} FORMAT: `YYYY-MM-DD` This is optional if you don't want to show the sarcastic message don't add dob.
+
+(optional)dob={DOB_OF_BIRTHDAYPERSON} FORMAT: `YYYY-MM-DD`
+
+> If you don't want to show the sarcastic message do not add DOB in params.
