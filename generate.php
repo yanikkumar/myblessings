@@ -48,8 +48,7 @@
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <button type="button" onclick="validateAndGenerate()"
-                class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Generate
-                Link</button>
+                class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Generate</button>
         </form>
         <div id="linkContainer" class="mt-6 text-center" style="display: none;">
             <p class="text-gray-700 font-semibold">Copy the text below to share:</p>
@@ -62,6 +61,15 @@
                 class="mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Copy
                 Message</button>
         </div>
+        <hr class="mt-4" />
+        <footer class="text-center p-4 text-sky-600">
+            <p class='text-xs font-light'>Created By <a href='https://youtube.com/yanikkumarvlogs?sub_confirmation=1'
+                    class='text-red-400 font-semibold'>Yanik Kumar</a></p>
+            &copy; <?php echo date("Y"); ?> <a href="https://myblessings.great-site.net"
+                class="font-light text-xs">MyBlessings.GreatSite</a></br>
+            <a href="https://github.com/yanikkumar" class="font-light text-xs">Believe Master - Create Innovate Inspire
+                & Serve</a>
+        </footer>
     </div>
 
     <script>
