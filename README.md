@@ -22,7 +22,7 @@ If you like the work make sure to ⭐This repo🤩 Will help me create some more
 
 ---
 
-If you want to see the previoud version of this project. It is hosted at 👇🏻
+If you want to see the previous version of this project. It is hosted at 👇🏻
 [https://yourbirthday.great-site.net](https://yourbirthday.great-site.net)
 
 To use this just go to: [myblessings.great-site.net/generate-blessings-link](https://myblessings.great-site.net/generate-blessings-link)
