@@ -18,6 +18,9 @@ Simple and easy to use.
 Just go to [myblessings.great-site.net/generate-blessings](https://myblessings.great-site.net/generate-blessings)
 
 Fill up the form and that's it. Just copy the text by clicking the button and send it to your loved ones on whatsapp or share it as a status on your social media.
+
+> If you don't want to show the sarcastic message do not add enter date.
+
 If you like the work make sure to ⭐This repo🤩 Will help me create some more open-source fun projects.
 
 ---

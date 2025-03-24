@@ -118,7 +118,7 @@
                 return "Well, you've made it past the honeymoon phase, at least.";
             } else {
                 // Fallback
-                return "Another year, another excuse for cake. Congrats.";
+                return "You just started your horry story. Congrats.";
             }
 
             if ($wishType == "birthday") {
