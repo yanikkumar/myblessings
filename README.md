@@ -75,7 +75,7 @@ I welcome contributions to make this project even better! Here are some ways you
 
 - **Add more messages:** The messages in `index.php` can be expanded.
 - **Improve the animations:** The JavaScript in `index.php` could be enhanced.
-- **Add праздничные features:** Think of new ways to make the more interactive and engaging.
+- **Add features:** Think of new ways to make the more interactive and engaging.
 - **Fix bugs:** If you find any issues, please report them or submit a pull request with a fix.
 
 1.  Fork the repository.
