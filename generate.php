@@ -63,7 +63,7 @@
                 baseUrl += '&dob=' + encodeURIComponent(dob);
             }
 
-            birthdayLinkInput.value = window.location.origin + window.location.pathname.replace('create.php', '') + baseUrl;
+            birthdayLinkInput.value = window.location.origin + window.location.pathname.replace('generate.php', '') + baseUrl;
             linkContainer.style.display = 'block';
         }
 
