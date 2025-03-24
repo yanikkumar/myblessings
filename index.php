@@ -89,8 +89,6 @@
 
         function getSarcasticMessage($years, $wishType)
         {
-            $ageOrYearsText = ($wishType == "birthday") ? "age" : "years";
-
             $messages = [
                 1 => "So, you've survived year 1?  That's...a start.",
                 5 => "{$years} years?  Wow, that's almost a respectable amount of time.",
@@ -115,14 +113,16 @@
             } elseif ($years > 10) {
                 return "You're halfway to a golden anniversary...keep it up!";
             } elseif ($years > 5) {
-                return "Not bad, but are you sure you wouldn't rather have a puppy?";
+                return "Not bad, Hope you're not tired of each other yet!";
             } elseif ($years > 1) {
                 return "Well, you've made it past the honeymoon phase, at least.";
             } else {
                 // Fallback
-                return ($wishType == "birthday") ?
-                    "You are " . $ageOrYears . " years old today, so grown up, you're practically vintage! (Just kidding, you're timeless.)" :
-                    "Happy " . $ageOrYears . "-year Anniversary!  Hope you're not tired of each other yet!";
+                return "Another year, another excuse for cake. Congrats.";
+            }
+
+            if ($wishType == "birthday") {
+                return "You are " . $years . " years old today, so grown up, you're practically vintage! (Just kidding, you're timeless.)";
             }
         }
 
