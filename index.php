@@ -131,9 +131,12 @@
         $date = isset($_GET['date']) ? $_GET['date'] : null;
         $wishType = isset($_GET['wishing']) ? $_GET['wishing'] : 'anniversary';
         wishes_celebration($name, $sendersName, $date, $wishType);
-        ?>
 
+        ?>
+        <hr class="mt-3" />
         <footer class="text-center p-4 text-sky-600">
+            <p class='text-xs font-light'>Created By <a href='https://youtube.com/yanikkumarvlogs?sub_confirmation=1'
+                    class='text-red-400 font-semibold'>Yanik Kumar</a></p>
             &copy; <?php echo date("Y"); ?> <a href="https://myblessings.great-site.net"
                 class="font-light text-xs">MyBlessings.GreatSite</a></br>
             <a href="https://github.com/yanikkumar" class="font-light text-xs">Believe Master - Create Innovate Inspire
