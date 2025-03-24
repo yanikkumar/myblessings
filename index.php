@@ -46,8 +46,8 @@
 <body class="bg-gradient-to-r from-purple-400 to-pink-500 min-h-screen flex items-center justify-center">
 
     <div class="absolute top-4 right-4 z-20">
-        <a href="https://github.com/yanikkumar/yourbirthday" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.shields.io/github/stars/yanikkumar/yourbirthday?style=social" alt="Star on GitHub">
+        <a href="https://github.com/yanikkumar/myblessings" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.shields.io/github/stars/yanikkumar/myblessings?style=social" alt="Star on GitHub">
         </a>
     </div>
 

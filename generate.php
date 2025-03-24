@@ -9,6 +9,11 @@
 </head>
 
 <body class="bg-gradient-to-r from-purple-400 to-pink-500 bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="absolute top-4 right-4 z-20">
+        <a href="https://github.com/yanikkumar/myblessings" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.shields.io/github/stars/yanikkumar/myblessings?style=social" alt="Star on GitHub">
+        </a>
+    </div>
     <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h2 class="text-2xl font-semibold mb-4 text-center text-indigo-600">Generate Blessings</h2>
         <form id="blessingsForm">
