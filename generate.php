@@ -10,7 +10,7 @@
 
 <body class="bg-gradient-to-r from-purple-400 to-pink-500 bg-gray-100 min-h-screen flex items-center justify-center">
     <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h2 class="text-2xl font-semibold mb-4 text-center text-indigo-600">Generate Shareable Birthday Link</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-center text-indigo-600">Generate Birthday Link</h2>
         <form id="birthdayForm">
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Recipient's Name:</label>
@@ -33,7 +33,7 @@
                 Link</button>
         </form>
         <div id="linkContainer" class="mt-6 text-center">
-            <p class="text-gray-700 font-semibold">Share this link:</p>
+            <p class="text-gray-700 font-semibold">Send this link:</p>
             <div class="mt-2 border rounded p-2 bg-gray-100">
                 <input type="text" id="birthdayLink" value=""
                     class="w-full text-sm text-gray-600 bg-transparent border-none focus:outline-none" readonly>
@@ -55,7 +55,7 @@
             const sender = document.getElementById('sender').value;
             const dob = document.getElementById('dob').value;
 
-            let baseUrl = 'index.php?name=' + encodeURIComponent(name);
+            let baseUrl = '/birthday-wish?name=' + encodeURIComponent(name);
             if (sender) {
                 baseUrl += '&sender=' + encodeURIComponent(sender);
             }
@@ -63,14 +63,14 @@
                 baseUrl += '&dob=' + encodeURIComponent(dob);
             }
 
-            birthdayLinkInput.value = window.location.origin + window.location.pathname.replace('generate.php', '') + baseUrl;
+            birthdayLinkInput.value = window.location.origin + baseUrl;
             linkContainer.style.display = 'block';
         }
 
         function copyLink() {
             birthdayLinkInput.select();
             document.execCommand('copy');
-            alert('Link copied to clipboard!');
+            alert('Link copied, go ahead and send them the blessings!');
         }
     </script>
 </body>
