@@ -16,6 +16,7 @@
                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Recipient's Name:</label>
                 <input type="text" id="name" name="name"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <p id="nameError" class="text-red-500 text-xs italic mt-1" style="display: none;"></p>
             </div>
             <div class="mb-4">
                 <label for="sender" class="block text-gray-700 text-sm font-bold mb-2">Sender's Name (Optional):</label>
@@ -28,7 +29,7 @@
                 <input type="date" id="dob" name="dob"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
-            <button type="button" onclick="generateLink()"
+            <button type="button" onclick="validateAndGenerate()"
                 class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Generate
                 Link</button>
         </form>
@@ -45,6 +46,20 @@
     </div>
 
     <script>
+        const nameInput = document.getElementById('name');
+        const nameError = document.getElementById('nameError');
+
+        function validateAndGenerate() {
+            if (nameInput.value.trim() === '') {
+                nameError.textContent = "Recipient's name is required";
+                nameError.style.display = 'block';
+                return;
+            } else {
+                nameError.style.display = 'none';
+                generateLink();
+            }
+        }
+
         const linkContainer = document.getElementById('linkContainer');
         const birthdayLinkInput = document.getElementById('birthdayLink');
 
