@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday! GreatSite</title>
+    <title>My Happy Blessings! GreatSite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <style>
@@ -53,35 +53,89 @@
 
     <div class="bg-white p-8 rounded-lg shadow-2xl text-center max-w-md w-full fade-in">
         <?php
-        // https://yourbirthday.great-site.net/?name=Yanik&sender=Believe+Master&dob=1998-03-21
-        function birthday_celebration($name, $sendersName, $dob = null)
+        function wishes_celebration($name, $sendersName = "Anonymous", $date = null, $wishType = "anniversary")
         {
-            echo "<h1 class='text-3xl font-bold text-indigo-600 mb-4'>🎉 Happy Birthday, " . htmlspecialchars($name) . "!<br/> 🎂</h1>";
-            $wishes = ["Happiness 😃", "Health 😇", "Success 💫 ", "Joy 😂", "Love 💖", "Positivity 🤩"];
+            $heading = ($wishType == "birthday") ? "🎉 Happy Birthday, " : "🎉 Happy Anniversary, ";
+            echo "<h1 class='text-3xl font-bold text-indigo-600 mb-4'>" . htmlspecialchars($heading) . htmlspecialchars($name) . "! 🎂</h1>";
+
+            $wishes = ($wishType == "birthday") ?
+                ["Happiness 😃", "Health 😇", "Success 💫 ", "Joy 😂", "Love 💖", "Positivity 🤩"] :
+                ["Love 🧑🏻‍❤️‍👩🏻", "Joy 😃", "Peace 🕊️", "Togetherness 👩🏻‍🤝‍👨🏻", "Prosperity 🤗", "Growth 🪴"];
             foreach ($wishes as $index => $wish) {
-                echo "<p class='text-lg text-gray-700 mb-2' id='wish-" . $index . "'>✨ Sending " . htmlspecialchars($wish) . " your way...</p>"; //replaced computer emoji with sparkles
+                echo "<p class='text-lg text-gray-700 mb-2' id='wish-" . $index . "'>✨ Sending " . htmlspecialchars($wish) . " your way...</p>";
             }
-            echo "<p class='text-xl text-green-600 mt-6 font-semibold'>🪄 May your heart's deepest desires blossom into reality, and every dream you chase fill you with breathtaking joy.</p><hr class='my-4'/>"; //Replaced line.
-            if ($dob) {
-                $birthDate = new DateTime($dob);
+
+            $message = ($wishType == "birthday") ?
+                "May your heart's deepest desires blossom into reality, and every dream you chase fill you with breathtaking joy." :
+                "May your journey of love continue to deepen, and may each day be a celebration of your togetherness.";
+            echo "<p class='text-xl text-green-600 mt-6'>" . htmlspecialchars($message) . "</p>";
+            echo "<p class='text-lg mt-4'>With Love From " . htmlspecialchars($sendersName) . "</p>";
+
+            if ($date) {
                 $today = new DateTime('today');
-                $age = $birthDate->diff($today)->y;
-                echo "<p class='text-lg mt-4 italic'>You are " . $age . " years old today, so grown up, you're practically vintage! 😂<br/> (Just kidding, you're timeless 😉)</p>";
+                if ($wishType == "birthday") {
+                    $birthDate = new DateTime($date);
+                    $age = $birthDate->diff($today)->y;
+                    $sarcasticMessage = getSarcasticMessage($age, $wishType);
+                    echo "<p class='text-lg mt-4'>" . htmlspecialchars($sarcasticMessage) . "</p>";
+                } else {
+                    $anniversaryDate = new DateTime($date);
+                    $years = $anniversaryDate->diff($today)->y;
+                    $sarcasticMessage = getSarcasticMessage($years, $wishType);
+                    echo "<p class='text-lg mt-4'>Happy " . $years . "-year Anniversary!  <br/>" . htmlspecialchars($sarcasticMessage) . "<br/> (Just kidding, you are 🥵🔥 couple.)</p>";
+                }
             }
-            echo "<p class='text-md mt-4'>With 🥰 From " . htmlspecialchars($sendersName) . "</p><hr class='my-4'/>"; // added the dynamic line
-        
-            echo "<p class='text-xs font-light'>Created By <a href='https://youtube.com/yanikkumarvlogs?sub_confirmation=1' class='text-red-400 font-semibold'>Yanik Kumar</a></p>";
+        }
+
+        function getSarcasticMessage($years, $wishType)
+        {
+            $ageOrYearsText = ($wishType == "birthday") ? "age" : "years";
+
+            $messages = [
+                1 => "So, you've survived year 1?  That's...a start.",
+                5 => "{$years} years?  Wow, that's almost a respectable amount of time.",
+                10 => "{$years} years!  You've unlocked the 'Endurance' achievement.",
+                20 => "{$years} years...are you sure you still like each other?",
+                30 => "{$years} years!  An inspiration to us all...or a sign of stubbornness.",
+                40 => "{$years} Years! You Deserve a Medal... or maybe just a really long vacation from each other.",
+                50 => "{$years} Years! Okay, now you're just showing off.",
+                "default" => "Another year, another excuse for cake. Congrats.",
+            ];
+
+            if (array_key_exists($years, $messages)) {
+                return $messages[$years];
+            } elseif ($years > 50) {
+                return "You two should write a book...or at least give a TED Talk.";
+            } elseif ($years > 40) {
+                return "Still going strong, or just too stubborn to quit?";
+            } elseif ($years > 30) {
+                return "You've officially been together longer than some countries have existed.";
+            } elseif ($years > 20) {
+                return "Is this true love, or just a really long negotiation?";
+            } elseif ($years > 10) {
+                return "You're halfway to a golden anniversary...keep it up!";
+            } elseif ($years > 5) {
+                return "Not bad, but are you sure you wouldn't rather have a puppy?";
+            } elseif ($years > 1) {
+                return "Well, you've made it past the honeymoon phase, at least.";
+            } else {
+                // Fallback
+                return ($wishType == "birthday") ?
+                    "You are " . $ageOrYears . " years old today, so grown up, you're practically vintage! (Just kidding, you're timeless.)" :
+                    "Happy " . $ageOrYears . "-year Anniversary!  Hope you're not tired of each other yet!";
+            }
         }
 
         $name = isset($_GET['name']) ? $_GET['name'] : 'Guest';
-        $sendersName = isset($_GET['sender']) ? $_GET['sender'] : "Your Friend";
-        $dob = isset($_GET['dob']) ? $_GET['dob'] : null;
-        birthday_celebration($name, $sendersName, $dob);
+        $sendersName = isset($_GET['sender']) ? $_GET['sender'] : "Anonymous";
+        $date = isset($_GET['date']) ? $_GET['date'] : null;
+        $wishType = isset($_GET['wishing']) ? $_GET['wishing'] : 'anniversary';
+        wishes_celebration($name, $sendersName, $date, $wishType);
         ?>
 
         <footer class="text-center p-4 text-sky-600">
-            &copy; <?php echo date("Y"); ?> <a href="https://yourbirthday.great-site.net"
-                class="font-light text-xs">YourBirthday.GreatSite</a></br>
+            &copy; <?php echo date("Y"); ?> <a href="https://myblessings.great-site.net"
+                class="font-light text-xs">MyBlessings.GreatSite</a></br>
             <a href="https://github.com/yanikkumar" class="font-light text-xs">Believe Master - Create Innovate Inspire
                 & Serve</a>
         </footer>
@@ -116,27 +170,32 @@
                 easing: 'easeOutElastic(1, .8)'
             })
 
-            //Balloon Animation
-            function createBalloon() {
-                const balloon = document.createElement('div');
-                balloon.classList.add('balloon');
-                balloon.textContent = '🎈'; // Balloon Emoji
-                balloon.style.left = Math.random() * window.innerWidth + 'px';
-                balloon.style.bottom = '-50px';
-                document.body.appendChild(balloon);
+            const allEmojis = ['💖', '🤩', '🎈', '🥂', '🎀', '🥰', '💗', '✨', '😊', '🥳', '❤️', '💞', '💝', '🎉'];
+
+            //Emoji Animation
+            function createAnimation() {
+                const emojiDiv = document.createElement('div');
+                emojiDiv.classList.add('balloon');
+
+                const randomEmoji = allEmojis[Math.floor(Math.random() * allEmojis.length)];
+                emojiDiv.textContent = randomEmoji;
+
+                emojiDiv.style.left = Math.random() * window.innerWidth + 'px';
+                emojiDiv.style.bottom = '-50px';
+                document.body.appendChild(emojiDiv);
 
                 anime({
-                    targets: balloon,
+                    targets: emojiDiv,
                     translateY: -window.innerHeight,
                     duration: Math.random() * 5000 + 3000,
                     easing: 'linear',
                     complete: function () {
-                        balloon.remove();
+                        emojiDiv.remove();
                     }
                 });
             }
 
-            setInterval(createBalloon, 1000);
+            setInterval(createAnimation, 1000);
         });
     </script>
 

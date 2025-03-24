@@ -1,8 +1,10 @@
 RewriteEngine On
 RewriteBase /
 
-# Route /birthday-wish to birthday.php
-RewriteRule ^birthday-wish/?$ index.php [L]
+# Route /blessings to birthday.php
 
-# Route /generate-birthday-link to generate.php
-RewriteRule ^generate-birthday-link/?$ generate.php [L]
+RewriteRule ^blessings/?$ index.php [L]
+
+# Route /generate-blessings to generate.php
+
+RewriteRule ^generate-blessings/?$ generate.php [L]
