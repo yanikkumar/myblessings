@@ -69,9 +69,34 @@ If you want to contribute to this project, or just run it on your own machine, h
       ```
     - **Access the application:** Open your web browser and go to `http://localhost:8000` (or the URL you set up).
 
+## Developer Usage
+
+1.  **Generate a Blessing:**
+
+    - Go to the `generate.php` page.
+    - Select the wish type (Birthday or Anniversary).
+    - Enter the recipient's name.
+    - Optionally, enter the sender's name and the date.
+    - Click the "Generate Link" button.
+
+2.  **Share the Blessing:**
+
+    - The application will generate a shareable link.
+    - Copy the link and share it with your friends and family via social media, messaging apps, or email.
+
+3.  **View a Blessing:**
+
+    - When someone clicks on the shared link, they will be directed to the `index.php` page, where they can view the personalized blessing message.
+
+## File Structure
+
+- `index.php`: Displays the personalized blessing message.
+- `generate.php`: Form to generate shareable blessing links.
+- `README.md`: Project documentation.
+
 ### Contribution
 
-I welcome contributions to make this project even better! Here are some ways you can contribute:
+I welcome contributions to make this project even better! If you have any ideas for new features or improvements, feel free to submit a pull request or open an issue.Here are some ways you can contribute:
 
 - **Add more messages:** The messages in `index.php` can be expanded.
 - **Improve the animations:** The JavaScript in `index.php` could be enhanced.
@@ -85,6 +110,14 @@ I welcome contributions to make this project even better! Here are some ways you
 5.  Submit a pull request.
 
 If you like the work, make sure to ⭐ this repo! 🤩 It will help me create some more open-source fun projects.
+
+## Developer
+
+- [Yanik Kumar](https://youtube.com/yanikkumarvlogs)
+
+## License
+
+This project is open-source.
 
 ---
 
