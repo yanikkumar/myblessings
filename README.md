@@ -121,6 +121,16 @@ This project is open-source.
 
 ---
 
+## Sponsor this project
+
+If you find this project helpful and want to support its development, please consider sponsoring me. Your contributions will help me dedicate more time to improving the project and adding new features.
+You can sponsor me on:
+
+- [GitHub](https://github.com/yanikkumar)
+- [Buy Me a Coffee](https://www.buymeacoffee.com/yanikkumar)
+
+---
+
 ## Previous Version
 
 The previous version of this project is hosted at: 👇🏻
