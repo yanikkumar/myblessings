@@ -40,8 +40,7 @@
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
-                <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Date of Anniversary/Birthday (YYYY-MM-DD,
-                    Optional):</label>
+                <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Month & Year of Anniversary/Birthday (Optional):</label>
                 <input type="month" id="date" name="date"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
