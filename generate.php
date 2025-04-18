@@ -19,15 +19,13 @@
         <form id="blessingsForm">
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2">Wish Type:</label>
-                <div class="flex items-center mb-2">
-                    <input type="radio" id="birthday" name="wishType" value="birthday"
-                        class="mr-2 h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" checked>
-                    <label for="birthday" class="text-gray-700 text-sm font-medium">Birthday</label>
-                </div>
                 <div class="flex items-center">
-                    <input type="radio" id="anniversary" name="wishType" value="anniversary"
-                        class="mr-2 h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                    <input type="radio" id="anniversary" name="wishType" value="anniversary" class="mr-2 h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" checked>
                     <label for="anniversary" class="text-gray-700 text-sm font-medium">Anniversary</label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input type="radio" id="birthday" name="wishType" value="birthday" class="mr-2 h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                    <label for="birthday" class="text-gray-700 text-sm font-medium">Birthday</label>
                 </div>
             </div>
             <div class="mb-4">
@@ -42,9 +40,9 @@
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
-                <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Date of Anniversary (YYYY-MM-DD,
+                <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Date of Anniversary/Birthday (YYYY-MM-DD,
                     Optional):</label>
-                <input type="date" id="date" name="date"
+                <input type="month" id="date" name="date"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <button type="button" onclick="validateAndGenerate()"
