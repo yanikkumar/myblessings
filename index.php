@@ -89,6 +89,9 @@
 
         function getSarcasticMessage($years, $wishType)
         {
+            if ($wishType == "birthday") {
+                return "You are " . $years . " years old today, so grown up, you're practically vintage! (Just kidding, you're timeless.)";
+            }
             $messages = [
                 1 => "So, you've survived year 1?  That's...a start.",
                 5 => "{$years} years?  Wow, that's almost a respectable amount of time.",
@@ -119,10 +122,6 @@
             } else {
                 // Fallback
                 return "You just started your horry story. Congrats.";
-            }
-
-            if ($wishType == "birthday") {
-                return "You are " . $years . " years old today, so grown up, you're practically vintage! (Just kidding, you're timeless.)";
             }
         }
 
