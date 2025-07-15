@@ -213,7 +213,7 @@
 
             // Initial burst of emojis
             for (let i = 0; i < 50; i++) {
-                setTimeout(createAnimation, i * 50); // 30 emojis, 50ms apart
+                setTimeout(createAnimation, i * 50); // 50 emojis, 50ms apart
             }
 
             // Then continue at normal pace
