@@ -27,11 +27,6 @@
         .balloon {
             position: absolute;
             pointer-events: none;
-        }
-
-        .balloon {
-            position: absolute;
-            pointer-events: none;
             font-size: 3rem;
             /* Adjust size as needed */
         }
@@ -39,6 +34,14 @@
         .ribbon {
             font-size: 1.5rem;
             /* Slightly smaller ribbons */
+        }
+
+        html, body {
+            overflow: hidden !important;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
         }
     </style>
 </head>
