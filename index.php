@@ -79,6 +79,7 @@
     <!-- Blessing Card -->
     <div id="blessingCard" class="bg-white px-2 py-6 md:p-8 pb-24 rounded-3xl shadow-3xl text-center max-w-sm md:max-w-lg w-full mx-auto my-8 md:my-16 flex flex-col justify-center items-center animate-fadeIn border border-indigo-100 blur-sm transition-all duration-700">
         <?php
+        date_default_timezone_set('Asia/Kolkata');
         function wishes_celebration($name, $sendersName = "Anonymous", $date = null, $wishType = "anniversary")
         {
             $heading = ($wishType == "birthday") ? "🎉 Happy Birthday, " : "🎉 Happy Anniversary, ";
