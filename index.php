@@ -47,6 +47,14 @@
 </head>
 
 <body class="bg-gradient-to-r from-purple-400 to-pink-500 min-h-screen flex items-center justify-center">
+    <!-- Start Overlay -->
+    <div id="startOverlay" style="position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;">
+        <button id="startButton" style="font-size:2rem;padding:1.5rem 3rem;border-radius:1rem;background:#fff;color:#7c3aed;font-weight:bold;box-shadow:0 2px 16px #0002;cursor:pointer;">Click to Start the Blessing 🎶</button>
+    </div>
+    <!-- Background Music -->
+    <audio id="bg-music" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b6fae5b6.mp3" loop></audio>
+    <!-- Pop Sound -->
+    <audio id="pop-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b7bfa.mp3"></audio>
 
     <div class="absolute top-4 right-4 z-20">
         <a href="https://github.com/yanikkumar/myblessings" target="_blank" rel="noopener noreferrer">
@@ -200,6 +208,21 @@
                 emojiDiv.style.bottom = '-50px';
                 document.body.appendChild(emojiDiv);
 
+                // Pop animation
+                anime({
+                    targets: emojiDiv,
+                    scale: [0, 1.2, 1],
+                    opacity: [0, 1],
+                    duration: 400,
+                    easing: 'easeOutElastic(1, .8)'
+                });
+                // Play pop sound
+                const popSound = document.getElementById('pop-sound');
+                if (popSound) {
+                    popSound.currentTime = 0;
+                    popSound.play();
+                }
+
                 anime({
                     targets: emojiDiv,
                     translateY: -window.innerHeight,
@@ -220,6 +243,26 @@
             setTimeout(() => {
                 setInterval(createAnimation, 300);
             }, 30 * 50);
+
+            // Start overlay logic
+            const startOverlay = document.getElementById('startOverlay');
+            const startButton = document.getElementById('startButton');
+            const bgMusic = document.getElementById('bg-music');
+            let audioStarted = false;
+            function startAudio() {
+                if (!audioStarted) {
+                    bgMusic.volume = 0.5;
+                    bgMusic.play();
+                    audioStarted = true;
+                }
+            }
+            function hideOverlayAndStart() {
+                startOverlay.style.display = 'none';
+                startAudio();
+            }
+            startButton.addEventListener('click', hideOverlayAndStart);
+            // Also allow clicking anywhere to start
+            startOverlay.addEventListener('click', hideOverlayAndStart);
         });
     </script>
 
