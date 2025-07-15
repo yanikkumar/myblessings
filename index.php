@@ -73,6 +73,17 @@
 
             if ($date) {
                 $today = new DateTime('today');
+                // Handle partial dates
+                $date = trim($date);
+                if (preg_match('/^\\d{4}-\\d{2}-\\d{2}$/', $date)) {
+                    // Full date, do nothing
+                } elseif (preg_match('/^\\d{4}-\\d{2}$/', $date)) {
+                    // Year and month only, set to last day of month
+                    $date .= '-' . date('t', strtotime($date . '-01'));
+                } elseif (preg_match('/^\\d{4}$/', $date)) {
+                    // Year only, set to last day of year
+                    $date .= '-12-31';
+                }
                 if ($wishType == "birthday") {
                     $birthDate = new DateTime($date);
                     $age = $birthDate->diff($today)->y;
