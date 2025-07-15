@@ -129,7 +129,10 @@
 
             // New Copy Message
             const fullLink = window.location.origin + baseUrl;
-            const shareableText = `Click to see a special ${wishType} message for ${name}: ${fullLink}`;
+            let shareableText = `Click to see a special ${wishType} message for ${name}: ${fullLink}`;
+            if (sender) {
+                shareableText += `\n\n-${sender}`;
+            }
 
             shareTextInput.value = shareableText;
             linkContainer.style.display = 'block';
