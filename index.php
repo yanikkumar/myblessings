@@ -208,7 +208,15 @@
                 });
             }
 
-            setInterval(createAnimation, 1000);
+            // Initial burst of emojis
+            for (let i = 0; i < 30; i++) {
+                setTimeout(createAnimation, i * 50); // 30 emojis, 50ms apart
+            }
+
+            // Then continue at normal pace
+            setTimeout(() => {
+                setInterval(createAnimation, 1000);
+            }, 30 * 50);
         });
     </script>
 
