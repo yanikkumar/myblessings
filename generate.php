@@ -40,8 +40,24 @@
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
-                <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Month & Year of Anniversary/Birthday (Optional):</label>
-                <input type="month" id="date" name="date"
+                <label class="block text-gray-700 text-sm font-bold mb-2">Date Type:</label>
+                <div class="flex items-center mb-2">
+                    <input type="radio" id="dateTypeFull" name="dateType" value="full" class="mr-2 h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" checked>
+                    <label for="dateTypeFull" class="text-gray-700 text-sm font-medium">Full Date (DD-MM-YYYY)</label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input type="radio" id="dateTypeMonth" name="dateType" value="month" class="mr-2 h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                    <label for="dateTypeMonth" class="text-gray-700 text-sm font-medium">Month & Year (MM-YYYY)</label>
+                </div>
+            </div>
+            <div class="mb-4" id="dateFullDiv">
+                <label for="dateFull" class="block text-gray-700 text-sm font-bold mb-2">Full Date of Anniversary/Birthday (Optional):</label>
+                <input type="date" id="dateFull" name="dateFull"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4" id="dateMonthDiv" style="display:none;">
+                <label for="dateMonth" class="block text-gray-700 text-sm font-bold mb-2">Month & Year of Anniversary/Birthday (Optional):</label>
+                <input type="month" id="dateMonth" name="dateMonth"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <button type="button" onclick="validateAndGenerate()"
@@ -94,8 +110,14 @@
         function generateLink() {
             const name = document.getElementById('name').value;
             const sender = document.getElementById('sender').value;
-            const date = document.getElementById('date').value;
             const wishType = document.querySelector('input[name="wishType"]:checked').value;
+            const dateType = document.querySelector('input[name="dateType"]:checked').value;
+            let date = '';
+            if (dateType === 'full') {
+                date = document.getElementById('dateFull').value;
+            } else {
+                date = document.getElementById('dateMonth').value;
+            }
 
             let baseUrl = '/blessings?name=' + encodeURIComponent(name) + '&wishing=' + encodeURIComponent(wishType);
             if (sender) {
@@ -118,6 +140,16 @@
             document.execCommand('copy');
             alert('Message copied, go ahead and send them the blessings!');
         }
+
+        // Toggle date input fields
+        document.getElementById('dateTypeFull').addEventListener('change', function() {
+            document.getElementById('dateFullDiv').style.display = 'block';
+            document.getElementById('dateMonthDiv').style.display = 'none';
+        });
+        document.getElementById('dateTypeMonth').addEventListener('change', function() {
+            document.getElementById('dateFullDiv').style.display = 'none';
+            document.getElementById('dateMonthDiv').style.display = 'block';
+        });
     </script>
 </body>
 
